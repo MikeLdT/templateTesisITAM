@@ -10,29 +10,74 @@
 % 
 \documentclass{tesisITAM}
 \usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{adjustbox}
+\usepackage{dsfont}
+\usepackage{float}
 
-\title{Implementación de un producto de datos}
-\author{Miguel Angel Escalante Serrato}
-\degree{Maestría en Ciencia de Datos}
-\advisor{Adolfo de Unánue Tiscareño}
-\year{2017}
+%\makeatletter
+%\def\ScaleWidthIfNeeded{%
+% \ifdim\Gin@nat@width>\linewidth
+%    \linewidth
+%  \else
+%    \Gin@nat@width
+%  \fi
+%}
+%\def\ScaleHeightIfNeeded{%
+%  \ifdim\Gin@nat@height>0.9\textheight
+%    0.9\textheight
+%  \else
+%    \Gin@nat@width
+%  \fi
+%}
+%\makeatother
+%\setkeys{Gin}{width=\ScaleWidthIfNeeded,height=\ScaleHeightIfNeeded,keepaspectratio}
+
+
+\title{Efecto progresivo del salario mínimo: evidencia del mercado inmobiliario mexicano}
+\author{Miguel Lerdo de Tejada Flores}
+\degree{Licenciado en Economía}
+\advisor{Dr. Emilio Gutiérrez Fernández}
+\year{2021}
 
 \begin{document}
 
+	
 	\pagenumbering{gobble}
 	\maketitle
 	\publicationrights
+	
+	\begin{center}
+	\textbf{Agradecimientos}
+	\end{center}
+	
+	
+	\clearpage
+	
+
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% ABSTRACT
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	\begin{abstract}{spanish}
-		Este documento presenta una plantilla para usar en las tesis y tesinas del ITAM. Se provee de manera gratuita y sin ninguna responsabilidad bajo la licencia \emph{creative commons BY-SA 3.0}.
+		El presente trabajo analiza el efecto de un aumento al salario mínimo en la zona libre de la frontera norte (ZLFN) sobre la generación de créditos hipotecarios otorgados por el INFONAVIT , en los crédtios hipotecarios otorgados por privados y en los precios de vivienda. A partir de datos del IMSS y del INFONAVIT y una estrategia de diferencias en diferencias, mido el impacto en los salarios reportados al IMSS y en los créditos INFONAVIT. De manera similar y partiendo de datos de la SHF y la CNBV, estimo el efecto en los créditos privados y en los precios de vivienda. 
+		
+Presento tres conjuntos de resultados principales. Primero, corroboro la evidencia existente que muestra que el aumento al salario mínimo en la ZLFN no tuvo efectos importantes sobre el nivel de empleo, pero sí un impacto positivo en los salarios de cotización ante el IMSS, sobre todo entre la población de menores ingresos. Después, calculo el impacto del aumento al salario mínimo en la cantidad y monto de créditos INFONAVIT, y observo una expansión crediticia. Finalmente, encuentro que la incidencia del aumento al salario mínimo en los créditos privados y en los precios de vivienda fue nula. 
+
+Concluyo que políticas públicas que aumenten el porcentaje del salario de los trabajdores que los empleadores reportan  puede impactar positivamente la disponibilidad de créditos para la clase trabajdora. Además, los trabajdores enfretarán los mismos precios de vivienda por lo que podrían acceder a mejores vecindarios.
+
+
 	\end{abstract}
 
 	\begin{abstract}{english}
-		In this work we present a template for thesis and titulation works presented at ITAM. It is provided freely and without any responsability under the \emph{creative commons BY-SA 3.0}. 
+		My objective is to analyze the impact in 2019 of the minimum wage increase in the Zona Libre de la Frontera Norte (ZLFN) with respect to the rest of the country had in housing credits offered by INFONAVIT, housing prices and private mortgages. Using data from IMSS and INFONAVIT combined with a dif-in-dif strategy, I measure the impact of such policy in wages reported to IMSS, and also in the number and quantity of INFONAVIT's housing credits. Following the same methodology, from SHF and CNBV data, I estimate the impact on housing prices and private mortgages.
+
+I present three sets of results. First, I verify that salaries reported to IMSS increase and that employment is unchanged. Second, given this increase, benefiting especially low earners, I document an increase in lending by INFONAVIT in states affected mostly by this policy. Finally, I find that neither private lending nor housing prices changed as a result of this policy.
+
+We can infer there is an increase in consumers' welfare, specifically for those at the left of the wages distribution. Now, less-earning people have access to more credit and prices remain unchanged, thus can buy improved-quality houses.
+
+
 	\end{abstract}
 
 
@@ -54,13 +99,13 @@
 
 	\include{Chapters/introduction}
 
-	% \include{Chapters/relatedwork}
+	\include{Chapters/relatedwork}
 
-	% \include{Chapters/method}
+	\include{Chapters/methodology}
 
-	% \include{Chapters/results}
+	\include{Chapters/results}
 
-	% \include{Chapters/conclusions}
+	\include{Chapters/conclusions}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% APPENDIX
@@ -72,7 +117,7 @@
 	% BIBLIOGRAPHY
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\clearpage
-	\addcontentsline{toc}{chapter}{References} %Añadimos la bibliografia a la lista de contenidos.
+	\addcontentsline{toc}{chapter}{Bibliografía} %Añadimos la bibliografia a la lista de contenidos.
 	
 	%%%%%%%%% Referencias usando el sistema embedido %%%%%%%%%%%
 	% e.g. (Ejemplo tomado de https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management)
@@ -89,7 +134,8 @@
 	% \end{thebibliography}
 
 	%%%%%%%%% Referencias usando bibtex %%%%%%%%%%%
-	\bibliographystyle{plain}
 	\bibliography{references} 
+	\bibliographystyle{apalike2}
+
 
 \end{document}

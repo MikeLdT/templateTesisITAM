@@ -1,56 +1,24 @@
 \chapter{Introducción}
 \label{ch:intro}
 
-\begin{chapterquote}{Leslie Lamport}
-	Formal mathematics is nature's way of letting you know how sloppy
-your mathematics is.
-\end{chapterquote}
+%\begin{chapterquote}{Leslie Lamport}
+%	Formal mathematics is nature's way of letting you know how sloppy
+%your mathematics is.
+%\end{chapterquote}
 
-Este trabajo presenta una plantilla para las tesis y tesinas del Instituto Tecnológico Autónomo de México para los usuarios de \LaTeX \cite{lamport1994latex}. Nace de la necesidad de los matemáticos, actuarios e ingenieros (entre otras carreras) por utilizar un sistema de composición de textos adecuado para su trabajo de titulación. El objetivo es ayudar a la comunidad del ITAM a simplificar el proceso de escritura y edición de sus tesis, tesinas o casos. A continuación describimos a mayor detalle cada una de las partes de la plantilla.
+%My objective is to analyze the impact in 2019 of the minimum wage increase in the Zona Libre de la Frontera Norte (ZLFN) with respect to the rest of the country had in housing credits offered by INFONAVIT, housing prices and private mortgages. Using data from IMSS and INFONAVIT combined with a dif-in-dif strategy, I measure the impact of such policy in wages reported to IMSS, and also in the number and quantity of INFONAVIT's housing credits. Following the same methodology, from SHF and CNBV data, I estimate the impact on housing prices and private mortgages.
 
-\subsection{Descripción de los archivos}
-\begin{enumerate}
-\item El archivo \textbf{tesisITAM.cls} define una nueva clase de documento con el mismo nombre. Esta clase se basa en el tipo reporte, el cual se emplea comúnmente para reportes de trabajo, pequeños libros y tesis.
+\noindent Los aumentos al salario han captado gran atención de la literatura que busca medir su impacto. Además de los canales tradicionales (por ejemplo consumo, desempleo e ingreso), incluso los precios minoristas pueden ser afectados por subir el salario mínimo \citep{leung_2020}. Hay argumentos para pensar que puede haber transisión al mercado inmobiliario \citep{macurdy_2015,yamagishi_2018,agarwal_ambrose_diop_2019}, lo que podría afectar los precios de los hogares. En particular, en México el salario mínimo está ligado al salario reportado ante las instituciones de seguridad social, que a su ves está ligado al crédito hipotecario otorgado por el gobierno. En ese sentido, resulta interesante preguntarse el efecto de ese mecanismo en el mercado inmbiliario. 
 
-\item El archivo \textbf{macros.sty} define macros y operadores adicionales, como por ejemplo, el argumento mínimo $\argmin$. Además provee un espacio para que el estudiante agregue sus definiciones propias.
+Mi objetivo es analizar el impacto que tuvo en 2019 el aumento diferenciado del salario mínimo en la Zona Libre de la Frontera Norte (ZLFN) con respecto al resto del país sobre los créditos hipotecarios ofrecidos por el Instituto del Fondo Nacional de la Vivienda para los Trabajadores (INFONAVIT), los precios de la vivienda y los créditos privados. En concreto, utilizando datos del Instituto Mexicano del Seguro Social (IMSS) y del INFONAVIT, así como una estrategia de diferencias en diferencias, mido el impacto de esta política sobre los salarios de cotización ante el IMSS, así como en el monto y número de créditos otorgados por el INFONAVIT. De la misma manera, a partir de datos de la Sociedad Hipotecaria Federal (SHF) y la Comisión Nacional Bancaria y de Valores (CNBV) mido el impacto en los precios de los hogares y en los créditos hipotecarios privados.
 
-\item Este archivo \textbf{introduction.tex} describe el funcionamiento de la plantilla y de los archivos. 
+%My principal hypothesis is that the minimum wage increase could have an impact on the housing market via two mechanisms. First, and clearly,  worker's purchase power is enhanced. Second, salaries reported to IMSS increase, and there is substantial evidence that bosses misreport workers' income \citep{kumler_verhoogen_frias_2020}. I do not expect that private mortgages are affected since workers affected by this policy usually borrow from INFONAVIT.
 
-\item El archivo principal \textbf{main.tex} es un ejemplo básico de un archivo de tesis para generar este ejemplo.
+Mi hipótesis principal es que el aumento al salario mínimo puede tener un impacto en la cantidad de créditos hipotecarios otorgados a través de dos mecanismos. El primero y más evidente, es el aumento en el ingreso de los trabajadores y por lo tanto, en su poder adquisitivo y capacidad de pago. El segundo mecanismo es precisamente a través del aumento en el porcentaje de los ingresos laborales totales que los empleadores reportan como salarios al IMSS, pues existe evidencia que sugiere que un monto importante de los ingresos laborales no es reportado al IMSS \citep{kumler_verhoogen_frias_2020}. No es de esperar que caeteris paribus el aumento afecte los créditos privados, ya que atienden a otro sector de la distribución de salarios. 
 
-\item El archivo \textbf{portada.tex} contiene el código necesario para generar la portada. El archivo \textbf{derechos.tex} contiene el texto para cede de derechos de publicación hacia el ITAM.
-\end{enumerate}
+%I present three sets of results. First, I verify that salaries reported to IMSS increase and that employment is unchanged. Second, given this increase, benefiting especially low earners, I document an increase in lending by INFONAVIT in states affected mostly by this policy. Finally, I find that neither private lending nor housing prices changed as a result of this policy.
 
-\subsection{Características de la plantilla}
-La plantilla se basa en el documento tipo reporte. Todas las opciones de la clase \emph{report} pueden ser utilizadas sin ninguna modificación (a4paper, 10pt, etc...). El espaciado del texto se establece a 1.33. Se eliminó la identación del párrafo, y el espaciado entre párrafos fue disminuido. Las sub-secciones se numeran utilizando números romanos. Se define un encabezado para cada página (salvo las que inician un capítulo) donde aparece el número del capítulo y el nombre de la sección.
+Presento tres conjuntos de resultados principales. Primero, verifico que ante un aumento al salario mínimo suben los salarios de cotización ante el IMSS y además, se mantiene sin cambio el nivel de empleo. Después, dado este aumento en el ingreso laboral de los trabajadores, sobre todo aquellos de menores ingresos, documento una expansión de créditos otorgados por el INFONAVIT en los estados del país en donde el aumento al salario mínimo en la ZLFN afectó a la población trabajadora. Finalmente, no hay cambio en el crédito privado, y el aumento de crédito INFONAVIT no se traduce por sí solo en algún cambio en los precios de vivienda. Podemos inferir entonces un aumento en el bienestar de quienes están en la cola izquierda de la distribución de salario, que ahora tienen más crédito disponible a los mismos precios, por lo que tienen acceso a mayores opciones de vivienda.
 
-\subsubsection{Paquetes importados}
-La plantilla utiliza los siguientes paquetes: \emph{graphicx}, \emph{amsopn}, \emph{fancyhdr}, y \emph{babel}. El paquete de manejo de idiomas babel es importado con los idiomas \textbf{english} y \emph{spanish} por defacto. Además, se seleccionan las opciones de uso de punto decimal y de nombrar las tablas como tablas y no como cuadros. 
+%We can infer there is an increase in consumers' welfare, specifically for those at the left of the wages distribution. Now, less-earning people have access to more credit and prices remain unchanged, thus can buy improved-quality houses.
 
-\subsubsection{Opciones de clase}
-Se declara una opción adicional de nombre \textbf{tesina} para cambiar la portada a que se declare el trabajo como tesina. 
-
-\subsubsection{Campos para el autor}
-Para el autor, se define los siguientes campos: \textbf{title},\textbf{author},\textbf{degree},\textbf{advisor}, y \textbf{year}. \emph{Title} define el título del trabajo de titulación, este título se presenta en la portada y al ceder los derechos de publicación. \emph{Author} define el nombre completo del autor de la tesis. \emph{Degree} se utiliza para establecer la carrera de la cual se va a titular, y debe incluir el texto completo (\emph{i.e.}, Licenciatura en X o Ingeniero en C). \emph{Advisor} recibe el nombre completo (con grado académico) del asesor, tal como se presentará en la portada. \emph{Year} recibe el año de titulación para presentarlo en la portada.
-
-\subsubsection{Generando la portada}
-El comando \textbf{\textbackslash maketitle} produce la portada con los campos previamente definidos. Utiliza el logo del ITAM, el cual se debe encontrar en el \textbf{PATH} de \LaTeX (\emph{e.g.}, en el fólder de Figures). 
-
-\subsubsection{Cediendo derechos de publicación}
-El comando \textbf{\textbackslash publicationrights} imprime una página con el texto oficial de cede de derechos. Los nombres de la tesis (tesina) y del autor se obtienen de los campos previamente definidos.
-
-\subsubsection{Añadiendo el resumen}
-Comúnmente, el resumen (o \emph{abstract}) se debe escribir tanto en español como en inglés. Para esto, se define el ambiente \textbf{abstract} que recibe como parámetro un idioma. En el caso de que el idioma no sea ni inglés ni español, se recomienda que el idioma haya sido previamente importado como opción del paquete babel. En otro caso, el paquete imprimirá una advertencia. 
-
-\subsubsection{Citando a los grandes}
-La plantilla define un nuevo ambiente para las citas al principio del capítulo \textbf{chapterquote} que recibe dos parámetros: el autor y el texto. Para un ejemplo, referirse al principio de este capítulo.
-
-
-\section{Licencia}
-Esta plantilla se distribuye bajo la licencia \emph{creative commons BY-SA 3.0}. Esta licencia permite la modificación de cualquier aspecto de la plantilla siempre y cuando se respeten las siguientes condiciones:
-\begin{enumerate}
-	\item Que se mantenga la atribución del trabajo original, es decir, que se mencionen los autores originales y su afiliación, tal como se hace en el archivo original.
-	\item Que todas las modificaciones se hagan públicas y libres de acceso, sin recibir ningún tipo de retribución por el uso o distribución de la plantilla.
-\end{enumerate}
-
-\section{Autor}

@@ -34,7 +34,7 @@
 \RequirePackage{macros}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Espaciados %%%%%%%%%%%%%%%%%%%%%%%%%%
-\parindent 0pt
+\parindent 15pt
 \parskip 1ex
 \renewcommand{\baselinestretch}{1.33}
 
@@ -89,6 +89,14 @@
 		\begin{center}\begin{otherlanguage}{#1}\bf\abstractname\end{otherlanguage}\end{center}
 	}{\clearpage}
 }{\ClassWarning{tesisITAM} {Babel package was not loaded.}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Agradecimientos %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\AtBeginDocument{\@ifpackageloaded{babel}{%
+%	\renewenvironment{acknowledgements}[1]{%
+%		\thispagestyle{empty}\bigskip%
+%		\begin{center}\begin{otherlanguage}{#1}\bf{Agradecimientos}\end{otherlanguage}\end{center}
+%	}{\clearpage}
+%}{\ClassWarning{tesisITAM} {Babel package was not loaded.}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Env. para citas %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newenvironment{chapterquote}[2][2em]{%

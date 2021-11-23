@@ -1,0 +1,96 @@
+\chapter{Metodología}
+\label{ch:methodology}
+
+%\begin{chapterquote}{Leslie Lamport}
+%	Formal mathematics is nature's way of letting you know how sloppy
+%your mathematics is.
+%\end{chapterquote}
+
+\noindent Utilizo datos del IMSS y del INFONAVIT, junto con una estrategia de diferencias en diferencias, para analizar el efecto que tiene el aumento al salario mínimo en la ZLFN sobre el empleo, los salarios de cotización y la cantidad y monto de los créditos otorgados a los trabajadores por el INFONAVIT. En concreto, comparo los cambios en estos indicadores para trabajadores en la ZLFN con respecto a trabajadores en el resto del país, alrededor del aumento al salario mínimo.
+
+	Mi procedimiento se da en tres partes. Primero, hallo el impacto que tuvo el aumento diferenciado del salario mínimo en la ZLFN sobre el empleo y los salarios con respecto al resto del país. Después, encuentro el efecto que tuvo dicho aumento del salario mínimo sobre el número y monto de créditos otorgados por el INFONAVIT. Finalmente, exploro también si el aumento en el salario mínimo tuvo un impacto en el crédito de la banca privada y en los precios de la vivienda.
+	
+\section{Datos}
+
+\noindent En los datos de acceso público del IMSS, la información sobre el total de empleos y masa salarial se reporta, para cada municipio, para trabadores divididos por género, nivel salarial y sector empresarial. A partir de estos datos, sigo la metodología propuesta por Kumler et al. (2020) y construyo celdas definidas por diferentes combinaciones de entidad federativa, municipio, sexo, sector, tamaño de la empresa donde se trabaja y rango de edad. Además, puedo identificar qué municipios pertenecen a la ZLFN. Finalmente, identifico quiénes tenían un salario de cotización menor a un salario mínimo o entre uno y dos salarios mínimos. Con esta información construyo la base de datos que empleo en la primera parte de los resultados.
+
+	A partir de los resultados anteriormente descritos,, utilizo datos del INFONAVIT para identificar a nivel estado, el número de créditos y el monto de créditos otorgados en cada entidad federativa. Desafortunadamente, en esta base de datos, el nivel más desagregado de observación es a nivel estado. Ahora bien, para medir la intensidad con que el cambio al salario mínimo puede haber afectado a cada estado, a partir de los datos del IMSS construyo un conjunto de indicadores que aproximan el porcentaje de trabajadores que pueden haber sido afectados por el incremento al salario mínimo.
+	
+	Es de notarse que la información utilizada para elaborar estas medidas de intensidad estatal corresponde a diciembre de 2018, antes del aumento al salario mínimo en la ZLFN. En concreto, primero identifico, para cada municipio, el número trabajadores totales y aquellos que ganaban menos de un salario mínimo y de uno a dos salarios mínimos. Con esta información, calculo el porcentaje de trabajadores cuyo ingreso laboral puede haber sido afectado por el aumento al salario mínimo: el porcentaje del total de trabajadores en cada estado que representan aquellos en esos dos rangos de ingreso que residían en municipios de la ZLFN.Mis medidas de intensidad se resumen en la siguiente tabla:
+
+
+\begin{table}[h]
+\caption{Medidas de Intensidad Estatal}
+\label{tab:1}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{l}
+\hline
+Medidas de Intensidad Estatal (MIE)                                                \\ \hline
+\% de trabajdores que ganan entre 1 y 2 salarios mínimos y viven en la ZLFN                 \\
+\% del total de empleos de trabajadores que ganan entre 1 y 2 salarios mínimos y viven en la ZLFN         \\
+\% de trabajdores que ganan menos de 2 salarios mínimos y viven en la ZLFN                 \\
+\% del total de empleos de trabajadores que ganan menos de 2 salarios mínimos y viven en la ZLFN         \\ \hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+Finalmente, para obtener información sobre precios de la vivienda, utilizo los datos disponibles de la Sociedad Hipotecaria Nacional (SHF). La SHF construye un índice trimestral de precios de vivienda para 59 municipios, en particular para cinco de los 43 que conforman la ZLFN. Para el monto de créditos hipotecarios de la banca privada, utilizo la base de datos de cartera acumulada de la Comisión Nacional Bancaria y de Valores (CNBV). Los datos son mensuales, por banco y por municipio, con ellos primero sumo por banco y por municipio y le resto el acumulado del periodo t-1 al del periodo t para obtener los nuevos créditos. 
+
+\section{Estimación}
+
+\noindent Empiezo por estimar el efecto del aumento del salario mínimo en la ZLFN sobre el nivel de empleo y sobre los salarios. Mi unidad de observación en cada período (trimestre del año) es una celda definida de la misma manera que en \citep{kumler_verhoogen_frias_2020}. la combinación entre municipio, sector de actividad, tamaño de la empresa, sexo de los trabajadores  y su rango de edad. Las variables dependientes de interés son el logaritmo natural del empleo total y de los salarios promedio. Mi especificación econométrica puede describirse por las siguientes ecuaciones:
+
+\begin{equation}\label{eq:1}
+log(\textrm{empleo}_{ijt})=c+\alpha_t+\sum_{t=1}^{20} \beta_t(ZLFN_j * \mathds{1}_{\{\tau=t\}})+\gamma_{ij}+\epsilon_{ijt}
+\end{equation}
+
+\begin{equation}\label{eq:2}
+log(\textrm{salario}_{ijt})=c+\alpha_t+\sum_{t=1}^{20} \beta_t(ZLFN_j * \mathds{1}_{\{\tau=t\}})+\gamma_{ij}+\epsilon_{ijt}
+\end{equation}
+
+Donde los subíndices i indican las celdas, j los municipios y t los 20 trimestres desde el primero de 2015 hasta el último de 2019. Las variables $\mathds{1}_{\{\tau=t}\}$ representan indicadoras por cada trimestre t y $ZLFN_j$ es una variable dicotómica que toma valor de uno si el municipio j pertenece a la Zona Libre de la Frontera Norte y cero en otro caso. El término $\alpha_t$ denota efectos fijos por período y el término $\gamma_{ij}$ denota efectos fijos por celda. Mis coeficientes de interés son entonces el conjunto de $\beta_t$s puesto que miden el cambio relativo en nuestra variable dependiente entre el periodo de referencia (el cuarto trimestre de 2018) y cada trimestre, ello entre las observaciones correspondientes a la ZLFN y el resto del país. 
+
+En la segunda parte de mi análisis, busco medir el impacto del aumento al salario mínimo en la ZLFN en el número de créditos y el monto total del crédito otorgado por el INFONAVIT también a partir de regresiones de diferencias en diferencias. Dadas las restricciones impuestas por la disponibilidad de información, este análisis se realiza a nivel estatal. En concreto, estimamos regresiones de la siguiente forma:
+
+\begin{equation}\label{eq:3}
+log(\textrm{número de créditos}_{kt})=c+\alpha_t\beta(MIE_k*\mathds{1}_{\{t\geq2019\}})+\gamma_k+\epsilon_{kt}
+\end{equation}
+
+\begin{equation}\label{eq:4}
+{\textrm{monto de créditos}_{kt}\over 1,000,000,000}=c+\alpha_t\beta(MIE_k*\mathds{1}_{\{t\geq2019\}})+\gamma_k+\epsilon_{kt}
+\end{equation}
+
+Donde k denota el estado, y t el trimestre; el término $\alpha_t$ denota que se incluyen efectos fijos por trimestre y el término $\gamma_k$  denota efectos fijos por estado. $MIE_k$ representa la medida de la intensidad con que el aumento al salario mínimo afectó a cada entidad federativa. Como mencioné anteriormente, propongo distintas medidas de intensidad, que resumo en la Tabla \ref{tab:1}.
+
+En este caso, mis coeficientes de interés son las  $\beta$s, puesto que miden el cambio relativo en las variables dependientes alrededor de la entrada en vigor del aumento al salario mínimo, entre estados más y menos afectados por el aumento al salario en la ZLFN.  
+
+Luego estimo el efecto en los precios de vivienda:
+
+\begin{equation} \label{eq:5}
+P_{jt}=c+\alpha_t+\beta_t\sum_{i=1}^{19}\textrm{Frontera}_j * T_j +\gamma_j
+\end{equation}
+
+Y en la cantidad y el monto de crédito privado.
+
+\begin{equation} \label{eq:6}
+{\textrm{Monto credito Privado}_{jt}\over \textrm{1,000,000,000}}=c+\alpha_t+\sum_{t=1}^{20}\beta_t\textrm{ZLFN}_j * T_t +\gamma_{jt} 
+\end{equation}
+
+\begin{equation} \label{eq:7}
+ln(\textrm{número de creditos Privado}_{jt})=c+\alpha_t+\sum_{t=1}^{20}\beta_t\textrm{ZLFN}_j * T_t +\gamma_{jt}
+\end{equation}
+
+Atendiendo a los problemas con los errores estándar que pueden presentarse al estimar por Diferencias en Diferencias \citep{bertrand_how_2004}, todos mis errores están clusterizados por unidad de observación. En particular para las ecuaciones \ref{eq:1} y \ref{eq:2} clusterizo por celda, para las ecuaciones \ref{eq:3}, \ref{eq:4}, \ref{eq:6} y \ref{eq:7} lo hago por estado y finalmente para \ref{eq:5} agrupo por municipio.
+
+Mi metodología logra identificar los efectos que deseo si se cumple el supuesto de tendencias paralelas tras aislar los efectos por periodo y unidad de observación. Es decir, si en ausencia de un aumento al salario mínimo las variables de interés habrían seguido el mismo comportamiento anterior a 2019 tras incluir efectos fijos por unidad de observación y periodo de observación. Tendencias paralelas es parcialmente verificable al graficar los coeficientes anteriores al aumento al salario mínimo y no muestren una tendecia fuerte ni cambien demasiado de un periodo a otro.
+
+Es posible que los resultados de la estimación del precio de la vivienda puedan estar sesgados, ya que cuento con datos para pocos municipios de la ZLFN. De manera complementaria, también estimo un control sintético por cada municipio de la Frontera Norte que está en la base de datos. Procedo siguiendo a \cite{abadie_comparative_2014}:
+
+\begin{itemize}
+\item Tomo uno de las cinco municipios de la ZLFN para losq ue tengo datos y excluyo a los otros cuatro municipios de la ZLFN.
+
+\item Creo una combinación convexa de la vairable de interés de los municipios fuera de la ZLFN, dándole más peso a los municipios que se comportaban de manera similar al que seleccioné antes de que entrara en vigor la ZLFN. 
+\end{itemize}
+
+En ese sentido, esperaría que los precios en el municipio que seleccioné se comportaran de manera muy similar al control sintético antes de que entrara en vigor la ZLFN. Si la medida tuvo algún impacto en los precios de vivienda debería obtener que, después de 2019, los precios de vivienda difieren significativmente entre ambos.
+
