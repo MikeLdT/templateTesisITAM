@@ -1,3 +1,6 @@
+![Mi tesis](main.pdf)
+=============
+
 Introducción 
 ============
 Este trabajo presenta una plantilla para las tesis y tesinas del
